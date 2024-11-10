@@ -1,5 +1,6 @@
 package UMC.UMC_7th_mission.repository.StoreRepository;
 
+import UMC.UMC_7th_mission.domain.QStore;
 import UMC.UMC_7th_mission.domain.Store;
 import com.querydsl.core.BooleanBuilder;
 import com.querydsl.jpa.impl.JPAQueryFactory;
@@ -32,3 +33,4 @@ public class StoreRepositoryImpl implements StoreRepositoryCustom{
                 .fetch();
     }
 }
+
