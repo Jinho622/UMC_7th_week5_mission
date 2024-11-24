@@ -1,5 +1,6 @@
 package UMC.UMC_7th_mission.apiPayload.exception;
 
+
 import UMC.UMC_7th_mission.apiPayload.ApiResponse;
 import UMC.UMC_7th_mission.apiPayload.code.ErrorReasonDTO;
 import UMC.UMC_7th_mission.apiPayload.code.status.ErrorStatus;
@@ -36,7 +37,7 @@ public class ExceptionAdvice extends ResponseEntityExceptionHandler {
         return handleExceptionInternalConstraint(e, ErrorStatus.valueOf(errorMessage), HttpHeaders.EMPTY,request);
     }
 
-    //@Override 빨간줄 떠서 주석처리함
+//    @Override //빨간 줄 떠서 주석처리함
     public ResponseEntity<Object> handleMethodArgumentNotValid(
             MethodArgumentNotValidException e, HttpHeaders headers, HttpStatus status, WebRequest request) {
 
