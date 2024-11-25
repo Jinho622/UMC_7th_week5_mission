@@ -9,6 +9,9 @@ import UMC.UMC_7th_mission.mapping.MemberMission;
 import UMC.UMC_7th_mission.mapping.MemberPrefer;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -16,6 +19,8 @@ import java.util.List;
 
 @Entity
 @Getter
+@DynamicUpdate
+@DynamicInsert
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
@@ -50,6 +55,7 @@ public class Member extends BaseEntity {
 //  @Column(nullable = false, length = 50) 소셜 로그인 없이 하는 중이라 이메일은 nullable로 바꾸고 진행하겠습니다.
     private String email;
 
+    @ColumnDefault("0")
     private Integer point;
 
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
