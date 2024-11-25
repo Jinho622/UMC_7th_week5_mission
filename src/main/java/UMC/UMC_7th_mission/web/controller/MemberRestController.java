@@ -23,7 +23,6 @@ public class MemberRestController {
     @PostMapping("/")
     public ApiResponse<MemberResponseDTO.JoinResultDTO> join(@RequestBody @Valid MemberRequestDTO.JoinDto request){
         Member member = memberCommandService.joinMember(request);
-        System.out.println("!!!");
         return ApiResponse.onSuccess(MemberConverter.toJoinResultDTO(member));
     }
 }
